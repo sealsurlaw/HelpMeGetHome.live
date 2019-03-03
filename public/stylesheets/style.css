@@ -28,3 +28,8 @@
 .text-right {
   text-align: right;
 }
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
