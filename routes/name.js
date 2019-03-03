@@ -6,10 +6,10 @@ var names = require('../public/js/names.json');
 router.get('/', function (req, res, next) {
     db.any(`SELECT * FROM controls;`)
         .then(data => {
-            console.log(data);
+            // console.log(data);
             retData = data[0];
             retData.name = names[Math.floor(Math.random() * names.length)] + Math.floor(Math.random() * 1000) + '';
-            console.log(retData);
+            // console.log(retData);
             res.send(retData)
         })
         .catch(err => {

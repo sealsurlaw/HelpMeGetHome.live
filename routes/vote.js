@@ -34,7 +34,7 @@ router.get('/', function (req, res, next) {
 
     db.any(`UPDATE controls SET "` + direction + `" = "` + direction + `" + 1; SELECT * FROM controls;`)
         .then(data => {
-            console.log(data[0]);
+            // console.log(data[0]);
             res.send(data[0]);
             return;
         })
