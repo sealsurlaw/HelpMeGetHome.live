@@ -55,7 +55,7 @@ class App extends React.Component {
 class Moves extends React.Component {
     render() {
         return (
-            <div id="moves" className="center">
+            <div id="moves" className="text-center">
                 I've made {this.props.moves} moves and counting!
             </div>
         );
