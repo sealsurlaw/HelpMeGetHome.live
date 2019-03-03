@@ -8,6 +8,7 @@ var updateRouter = require('./routes/update');
 var voteRouter = require('./routes/vote');
 var moveRouter = require('./routes/move');
 var nameRouter = require('./routes/name');
+var smsRouter = require('./routes/sms');
 
 var app = express();
 
@@ -22,5 +23,6 @@ app.use('/update', updateRouter);
 app.use('/vote', voteRouter);
 app.use('/move', moveRouter);
 app.use('/name', nameRouter);
+app.use('/sms', smsRouter);
 
 module.exports = app;
