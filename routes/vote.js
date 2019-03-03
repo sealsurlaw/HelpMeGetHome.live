@@ -8,23 +8,23 @@ router.get('/', function (req, res, next) {
 
     switch (directionQuery) {
         case 'left':
-            direction = 'numLefts';
+            direction = 'left';
             break;
         case 'right':
-            direction = 'numRights';
+            direction = 'right';
             break;
         case 'forward':
-            direction = 'numForwards';
+            direction = 'forward';
             break;
         case 'left':
-            direction = 'numBacks';
+            direction = 'backward';
             break;
         default:
             direction = '';
             break;
     }
 
-    db.any(`UPDATE controls SET '` + direction + `' = '` + direction + `' + 1, 'numMoves' = 'numMoves' + 1;`)
+    db.any(`UPDATE controls SET ` + direction + ` = ` + direction + ` + 1, moves = moves + 1;`)
         .then(data => {
             console.log(data[0]);
             res.send(data[0]);
