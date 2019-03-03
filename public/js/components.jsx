@@ -20,11 +20,11 @@ class App extends React.Component {
             .then(res => {
                 console.log(res);
                 this.setState({
-                    time: res.data.time,
-                    left: res.data.left,
-                    right: res.data.right,
-                    forward: res.data.forward,
-                    backward: res.data.backward,
+                    time: res.time,
+                    left: res.left,
+                    right: res.right,
+                    forward: res.forward,
+                    backward: res.backward,
                 })
             })
             .catch(err => {
