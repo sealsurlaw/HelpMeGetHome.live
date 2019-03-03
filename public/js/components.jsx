@@ -18,6 +18,8 @@ class App extends React.Component {
         this.tick();
 
         this.timer = setInterval(this.tick, 250);
+
+        this.timer = this.timer.bind(this);
     }
 
     tick = function () {
@@ -26,7 +28,7 @@ class App extends React.Component {
             .then(res => {
                 console.log(res);
                 this.setState({
-                    time: res.time,
+                    moves: res.moves,
                     left: res.left,
                     right: res.right,
                     forward: res.forward,
