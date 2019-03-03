@@ -18,7 +18,7 @@ class App extends React.Component {
         this.tick = this.tick.bind(this);
     }
 
-    componentDidMount() {
+    componentWillMount() {
         fetch('/name')
             .then(response => response.json())
             .then(res => {
@@ -38,6 +38,28 @@ class App extends React.Component {
             .catch(err => {
                 console.log(err);
             })
+    }
+
+    componentDidMount() {
+        // fetch('/name')
+        //     .then(response => response.json())
+        //     .then(res => {
+        //         //console.log(res);
+        //         this.setState({
+        //             name: res.name,
+        //             moves: res.moves,
+        //             left: res.left,
+        //             right: res.right,
+        //             forward: res.forward,
+        //             backward: res.backward,
+        //             users: res.users,
+        //             messages: res.messages,
+        //             ip: res.ip + ":8000"
+        //         })
+        //     })
+        //     .catch(err => {
+        //         console.log(err);
+        //     })
 
         this.timer = setInterval(this.tick, 250);
     }
