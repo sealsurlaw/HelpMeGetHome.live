@@ -61,7 +61,7 @@ class Timer extends React.Component {
 class Stream extends React.Component {
     render() {
         return (
-            <iframe src="http://sealsurlaw-54353.portmap.host:49979/index.html" style="height:240px; width:320px; border: none;">
+            <iframe src="http://sealsurlaw-54353.portmap.host:49979/index.html" height="240" width="320">
             </iframe>
         );
     }
