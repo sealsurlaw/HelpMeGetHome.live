@@ -16,13 +16,28 @@ class App extends React.Component {
     }
 
     componentDidMount() {
-        this.tick();
+        fetch('/name')
+            .then(response => response.json())
+            .then(res => {
+                console.log(res);
+                this.setState({
+                    name: res.name,
+                    moves: res.moves,
+                    left: res.left,
+                    right: res.right,
+                    forward: res.forward,
+                    backward: res.backward,
+                })
+            })
+            .catch(err => {
+                console.log(err);
+            })
 
         this.timer = setInterval(this.tick, 250);
     }
 
     tick = function () {
-        fetch('/name')
+        fetch('/update')
             .then(response => response.json())
             .then(res => {
                 console.log(res);
@@ -205,8 +220,8 @@ class Chat extends React.Component {
 
     render() {
         return (
-            <div id="chat" className="center full-width">
-                {this.props.name}
+            <div id="chat" className="full-width">
+                {this.props.name}<br />
                 <input type="text" value={this.state.value} onChange={this.handleChange} />
             </div>
         );
