@@ -19,7 +19,7 @@ class App extends React.Component {
 
         this.timer = setInterval(this.tick, 250);
 
-        this.timer = this.timer.bind(this);
+        this.tick = this.tick.bind(this);
     }
 
     tick = function () {
