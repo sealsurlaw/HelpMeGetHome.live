@@ -7,6 +7,7 @@ var indexRouter = require('./routes/index');
 var updateRouter = require('./routes/update');
 var voteRouter = require('./routes/vote');
 var moveRouter = require('./routes/move');
+var nameRouter = require('./routes/name');
 
 var app = express();
 
@@ -20,5 +21,6 @@ app.use('/', indexRouter);
 app.use('/update', updateRouter);
 app.use('/vote', voteRouter);
 app.use('/move', moveRouter);
+app.use('/name', nameRouter);
 
 module.exports = app;
