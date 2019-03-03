@@ -18,6 +18,7 @@ class App extends React.Component {
         fetch('/update')
             .then(response => response.json())
             .then(res => {
+                console.log(res);
                 this.setState({
                     time: res.data.time,
                     left: res.data.left,
