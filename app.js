@@ -9,6 +9,7 @@ var voteRouter = require('./routes/vote');
 var moveRouter = require('./routes/move');
 var nameRouter = require('./routes/name');
 var smsRouter = require('./routes/sms');
+var message = require('./routes/message');
 
 var app = express();
 
@@ -24,5 +25,6 @@ app.use('/vote', voteRouter);
 app.use('/move', moveRouter);
 app.use('/name', nameRouter);
 app.use('/sms', smsRouter);
+app.use('/message', message);
 
 module.exports = app;
