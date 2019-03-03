@@ -8,7 +8,7 @@ router.get('/', function (req, res, next) {
         .then(data => {
             console.log(data);
             retData = data[0];
-            retData.name = names[Math.floor(Math.random() * name.length())]
+            retData.name = names[Math.floor(Math.random() * names.length())]
             console.log(retData);
             res.send(retData)
         })
