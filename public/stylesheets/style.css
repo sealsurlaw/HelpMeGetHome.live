@@ -17,6 +17,11 @@
   height: 100px;
 }
 
+.padding-lr {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
 .text-center {
   text-align: center;
 }

@@ -160,11 +160,11 @@ class Controls extends React.Component {
                             <td></td>
                         </tr>
                         <tr className="border">
-                            <td className="align-middle text-left border">{this.props.left}</td>
+                            <td className="align-middle text-left padding-lr border">{this.props.left}</td>
                             <td><a onClick={this.voteLeft}><i className="fas fa-arrow-left"></i></a></td>
                             <td></td>
                             <td><a onClick={this.voteRight}><i className="fas fa-arrow-right"></i></a></td>
-                            <td className="align-middle text-right border">{this.props.right}</td>
+                            <td className="align-middle text-right padding-lr border">{this.props.right}</td>
                         </tr>
                         <tr className="border">
                             <td></td>
