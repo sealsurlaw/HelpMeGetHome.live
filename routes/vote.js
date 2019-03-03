@@ -16,7 +16,7 @@ router.get('/', function (req, res, next) {
         case 'forward':
             direction = 'forward';
             break;
-        case 'left':
+        case 'backward':
             direction = 'backward';
             break;
         default:
@@ -24,10 +24,19 @@ router.get('/', function (req, res, next) {
             break;
     }
 
+    if (direction.length == 0) {
+        db.any(`SELECT * FROM controls;`)
+            .then(data => {
+                res.send(data[0]);
+                return;
+            })
+    }
+
     db.any(`UPDATE controls SET "` + direction + `" = "` + direction + `" + 1, "moves" = "moves" + 1; SELECT * FROM controls;`)
         .then(data => {
             console.log(data[0]);
             res.send(data[0]);
+            return;
         })
         .catch(err => {
             console.log(err);
@@ -38,6 +47,7 @@ router.get('/', function (req, res, next) {
                 forward: null,
                 backward: null,
             })
+            return;
         })
 });
 
