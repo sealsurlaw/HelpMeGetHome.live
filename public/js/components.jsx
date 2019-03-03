@@ -61,11 +61,8 @@ class Timer extends React.Component {
 class Stream extends React.Component {
     render() {
         return (
-            <video width="320" height="240" className="center">
-                <source src="/videos/movie.mp4" type="video/mp4" />
-                {/* <source src="movie.ogg" type="video/ogg" /> */}
-                Your browser does not support the video tag.
-            </video>
+            <iframe src="http://sealsurlaw-54353.portmap.host:49979/index.html" style="height:240px; width:320px; border: none;">
+            </iframe>
         );
     }
 }
@@ -86,21 +83,21 @@ class Controls extends React.Component {
                         <tr>
                             <td></td>
                             <td></td>
-                            <td><a href="#"><i className="fas fa-arrow-up"></i></a></td>
+                            <td><a href="http://helpmegethome.herokuapp.com/vote?direction=forward"><i className="fas fa-arrow-up"></i></a></td>
                             <td></td>
                             <td></td>
                         </tr>
                         <tr>
                             <td>{this.props.left}</td>
-                            <td><a href="#"><i className="fas fa-arrow-left"></i></a></td>
+                            <td><a href="http://helpmegethome.herokuapp.com/vote?direction=left"><i className="fas fa-arrow-left"></i></a></td>
                             <td></td>
-                            <td><a href="#"><i className="fas fa-arrow-right"></i></a></td>
+                            <td><a href="http://helpmegethome.herokuapp.com/vote?direction=right"><i className="fas fa-arrow-right"></i></a></td>
                             <td>{this.props.right}</td>
                         </tr>
                         <tr>
                             <td></td>
                             <td></td>
-                            <td><a href="#"><i className="fas fa-arrow-down"></i></a></td>
+                            <td><a href="http://helpmegethome.herokuapp.com/vote?direction=backward"><i className="fas fa-arrow-down"></i></a></td>
                             <td></td>
                             <td></td>
                         </tr>
