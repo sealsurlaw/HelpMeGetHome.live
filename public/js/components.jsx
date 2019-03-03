@@ -100,21 +100,21 @@ class Controls extends React.Component {
                         <tr>
                             <td></td>
                             <td></td>
-                            <td><a onClick={vote("forward")}><i className="fas fa-arrow-up"></i></a></td>
+                            <td><a onClick={this.vote("forward")}><i className="fas fa-arrow-up"></i></a></td>
                             <td></td>
                             <td></td>
                         </tr>
                         <tr>
                             <td>{this.props.left}</td>
-                            <td><a onClick={vote("left")}><i className="fas fa-arrow-left"></i></a></td>
+                            <td><a onClick={this.vote("left")}><i className="fas fa-arrow-left"></i></a></td>
                             <td></td>
-                            <td><a onClick={vote("right")}><i className="fas fa-arrow-right"></i></a></td>
+                            <td><a onClick={this.vote("right")}><i className="fas fa-arrow-right"></i></a></td>
                             <td>{this.props.right}</td>
                         </tr>
                         <tr>
                             <td></td>
                             <td></td>
-                            <td><a onClick={vote("backward")}><i className="fas fa-arrow-down"></i></a></td>
+                            <td><a onClick={this.vote("backward")}><i className="fas fa-arrow-down"></i></a></td>
                             <td></td>
                             <td></td>
                         </tr>
@@ -127,7 +127,7 @@ class Controls extends React.Component {
                         </tr>
                     </tbody>
                 </table>
-            </div>
+            </div >
         );
     }
 }
