@@ -22,7 +22,7 @@ class App extends React.Component {
         fetch('/name')
             .then(response => response.json())
             .then(res => {
-                //console.log(res);
+                console.log(res);
                 this.setState({
                     name: res.name,
                     moves: res.moves,
