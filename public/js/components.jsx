@@ -12,6 +12,7 @@ class App extends React.Component {
             backward: null,
             users: [null, null, null, null, null],
             messages: [null, null, null, null, null],
+            ip: "http://10.143.230.108:8000/index.html",
         }
 
         this.tick = this.tick.bind(this);
@@ -31,6 +32,7 @@ class App extends React.Component {
                     backward: res.backward,
                     users: res.users,
                     messages: res.messages,
+                    ip: res.ip + ":49979/index.html"
                 })
             })
             .catch(err => {
@@ -53,6 +55,7 @@ class App extends React.Component {
                     backward: res.backward,
                     users: res.users,
                     messages: res.messages,
+                    ip: res.ip + ":49979/index.html"
                 })
             })
             .catch(err => {
@@ -64,7 +67,7 @@ class App extends React.Component {
         return (
             <div>
                 <Moves moves={this.state.moves} />
-                <Stream />
+                <Stream src={this.state.ip} />
                 <Controls left={this.state.left} right={this.state.right} forward={this.state.forward} backward={this.state.backward} />
                 <Chat name={this.state.name} users={this.state.users} messages={this.state.messages} />
             </div>
@@ -83,10 +86,16 @@ class Moves extends React.Component {
 }
 
 class Stream extends React.Component {
+    constructor(props) {
+        super(props);
+
+
+    }
+
     render() {
         return (
-            <iframe src="http://sealsurlaw-54353.portmap.host:49979/index.html" height="280" width="320" className="center border-none stream">
-            </iframe>
+            <iframe src={this.props.ip} height="280" width="320" className="center border-none stream" >
+            </iframe >
         );
     }
 }
