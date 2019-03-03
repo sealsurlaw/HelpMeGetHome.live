@@ -7,8 +7,10 @@ router.get('/', function (req, res, next) {
     db.any(`SELECT * FROM controls;`)
         .then(data => {
             console.log(data);
-            data[0].name = names[Math.floor(Math.random() * name.length())]
-            res.send(data[0])
+            retData = data[0];
+            retData.name = names[Math.floor(Math.random() * name.length())]
+            console.log(retData);
+            res.send(retData)
         })
         .catch(err => {
             console.log(err);
