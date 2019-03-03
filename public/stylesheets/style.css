@@ -18,6 +18,14 @@ a {
   width: 50%;
 }
 
+.fas {
+  font-size: 40px;
+}
+
+.middle-row {
+  height: 100px;
+}
+
 .text-center {
   text-align: center;
 }
