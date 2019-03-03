@@ -148,35 +148,35 @@ class Controls extends React.Component {
                         <tr>
                             <td></td>
                             <td></td>
-                            <td className="text-center">{this.props.forward}</td>
+                            <td className="text-center border">{this.props.forward}</td>
                             <td></td>
                             <td></td>
                         </tr>
                         <tr>
                             <td></td>
                             <td></td>
-                            <td className="text-center"><a onClick={this.voteForward}><i className="fas fa-arrow-up"></i></a></td>
+                            <td className="text-center border"><a onClick={this.voteForward}><i className="fas fa-arrow-up"></i></a></td>
                             <td></td>
                             <td></td>
                         </tr>
                         <tr>
-                            <td className="align-middle text-left">{this.props.left}</td>
+                            <td className="align-middle text-left border">{this.props.left}</td>
                             <td><a onClick={this.voteLeft}><i className="fas fa-arrow-left"></i></a></td>
                             <td></td>
                             <td><a onClick={this.voteRight}><i className="fas fa-arrow-right"></i></a></td>
-                            <td className="align-middle text-right">{this.props.right}</td>
+                            <td className="align-middle text-right border">{this.props.right}</td>
                         </tr>
                         <tr>
                             <td></td>
                             <td></td>
-                            <td className="text-center"><a onClick={this.voteBackward}><i className="fas fa-arrow-down"></i></a></td>
+                            <td className="text-center border"><a onClick={this.voteBackward}><i className="fas fa-arrow-down"></i></a></td>
                             <td></td>
                             <td></td>
                         </tr>
                         <tr>
                             <td></td>
                             <td></td>
-                            <td className="text-center">{this.props.backward}</td>
+                            <td className="text-center border">{this.props.backward}</td>
                             <td></td>
                             <td></td>
                         </tr>
