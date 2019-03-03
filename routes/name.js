@@ -7,7 +7,7 @@ router.get('/', function (req, res, next) {
     db.any(`SELECT * FROM controls;`)
         .then(data => {
             console.log(data);
-            data.name = names[Math.floor(Math.random() * name.length())]
+            data[0].name = names[Math.floor(Math.random() * name.length())]
             res.send(data[0])
         })
         .catch(err => {
