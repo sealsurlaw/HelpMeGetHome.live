@@ -205,6 +205,7 @@ class Chat extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            value: '',
             message: null,
             names: [null, null, null, null, null],
             messages: [null, null, null, null, null],
@@ -238,6 +239,7 @@ class Chat extends React.Component {
                 <div className="full-width">{this.props.name}</div>
                 <input type="text" className="full-width" value={this.state.value} onChange={this.handleChange} />
                 <input type="submit" className="full-width" onClick={this.handleClick} />
+                <div className="full-width" style="background-color: white;"></div>
             </div>
         );
     }

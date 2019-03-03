@@ -21,7 +21,7 @@ router.post('/sms', (req, res) => {
         twiml.message('Goodbye');
     }
 
-    res.writeHead(200, { 'Content-Type': 'text/xml' });
+    res.writeHead(200, { 'Content-Type': 'text/json' });
     res.end(twiml.toString());
 });
 
