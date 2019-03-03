@@ -68,8 +68,59 @@ class Stream extends React.Component {
 }
 
 class Controls extends React.Component {
-    vote = (direction) => {
-        fetch('/vote?direction=' + direction)
+    voteForward = () => {
+        fetch('/vote?direction=forward')
+            .then(response => response.json())
+            .then(res => {
+                console.log(res);
+                this.setState({
+                    left: res.left,
+                    right: res.right,
+                    forward: res.forward,
+                    backward: res.backward,
+                })
+            })
+            .catch(err => {
+                console.log(err);
+            })
+    }
+
+    voteLeft = () => {
+        fetch('/vote?direction=left')
+            .then(response => response.json())
+            .then(res => {
+                console.log(res);
+                this.setState({
+                    left: res.left,
+                    right: res.right,
+                    forward: res.forward,
+                    backward: res.backward,
+                })
+            })
+            .catch(err => {
+                console.log(err);
+            })
+    }
+
+    voteRight = () => {
+        fetch('/vote?direction=right')
+            .then(response => response.json())
+            .then(res => {
+                console.log(res);
+                this.setState({
+                    left: res.left,
+                    right: res.right,
+                    forward: res.forward,
+                    backward: res.backward,
+                })
+            })
+            .catch(err => {
+                console.log(err);
+            })
+    }
+
+    voteBackward = () => {
+        fetch('/vote?direction=backward')
             .then(response => response.json())
             .then(res => {
                 console.log(res);
@@ -100,21 +151,21 @@ class Controls extends React.Component {
                         <tr>
                             <td></td>
                             <td></td>
-                            <td><a onClick={this.vote("forward")}><i className="fas fa-arrow-up"></i></a></td>
+                            <td><a onClick={this.voteForward}><i className="fas fa-arrow-up"></i></a></td>
                             <td></td>
                             <td></td>
                         </tr>
                         <tr>
                             <td>{this.props.left}</td>
-                            <td><a onClick={this.vote("left")}><i className="fas fa-arrow-left"></i></a></td>
+                            <td><a onClick={this.voteLeft}><i className="fas fa-arrow-left"></i></a></td>
                             <td></td>
-                            <td><a onClick={this.vote("right")}><i className="fas fa-arrow-right"></i></a></td>
+                            <td><a onClick={this.voteRight}><i className="fas fa-arrow-right"></i></a></td>
                             <td>{this.props.right}</td>
                         </tr>
                         <tr>
                             <td></td>
                             <td></td>
-                            <td><a onClick={this.vote("backward")}><i className="fas fa-arrow-down"></i></a></td>
+                            <td><a onClick={this.voteBackward}><i className="fas fa-arrow-down"></i></a></td>
                             <td></td>
                             <td></td>
                         </tr>
