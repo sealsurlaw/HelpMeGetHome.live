@@ -143,50 +143,46 @@ class Controls extends React.Component {
     render() {
         return (
             <div id="controls" className="border container-fluid">
-                <div className="row justify-content-center">
-                    <div className="col">
-                        <table className="border">
-                            <tbody className="border">
-                                <tr className="border">
-                                    <td></td>
-                                    <td></td>
-                                    <td className="text-center border">{this.props.forward}</td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr className="border">
-                                    <td></td>
-                                    <td></td>
-                                    <td className="text-center border"><a onClick={this.voteForward}><i className="fas fa-arrow-up"></i></a></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr className="border">
-                                    <td className="align-middle text-left padding-lr border">{this.props.left}</td>
-                                    <td><a onClick={this.voteLeft}><i className="fas fa-arrow-left"></i></a></td>
-                                    <td></td>
-                                    <td><a onClick={this.voteRight}><i className="fas fa-arrow-right"></i></a></td>
-                                    <td className="align-middle text-right padding-lr border">{this.props.right}</td>
-                                </tr>
-                                <tr className="border">
-                                    <td></td>
-                                    <td></td>
-                                    <td className="text-center border"><a onClick={this.voteBackward}><i className="fas fa-arrow-down"></i></a></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr className="border">
-                                    <td></td>
-                                    <td></td>
-                                    <td className="text-center border">{this.props.backward}</td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div >
+                <table className="border">
+                    <tbody className="border">
+                        <tr className="border">
+                            <td></td>
+                            <td></td>
+                            <td className="text-center border">{this.props.forward}</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr className="border">
+                            <td></td>
+                            <td></td>
+                            <td className="text-center border"><a onClick={this.voteForward}><i className="fas fa-arrow-up"></i></a></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr className="border">
+                            <td className="align-middle text-left padding-lr border">{this.props.left}</td>
+                            <td><a onClick={this.voteLeft}><i className="fas fa-arrow-left"></i></a></td>
+                            <td></td>
+                            <td><a onClick={this.voteRight}><i className="fas fa-arrow-right"></i></a></td>
+                            <td className="align-middle text-right padding-lr border">{this.props.right}</td>
+                        </tr>
+                        <tr className="border">
+                            <td></td>
+                            <td></td>
+                            <td className="text-center border"><a onClick={this.voteBackward}><i className="fas fa-arrow-down"></i></a></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr className="border">
+                            <td></td>
+                            <td></td>
+                            <td className="text-center border">{this.props.backward}</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         );
     }
 }
