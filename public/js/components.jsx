@@ -42,7 +42,6 @@ class App extends React.Component {
             .then(res => {
                 console.log(res);
                 this.setState({
-                    name: res.name,
                     moves: res.moves,
                     left: res.left,
                     right: res.right,
@@ -220,9 +219,9 @@ class Chat extends React.Component {
 
     render() {
         return (
-            <div id="chat" className="full-width">
+            <div id="chat" className="container-fluid">
                 {this.props.name}<br />
-                <input type="text" value={this.state.value} onChange={this.handleChange} />
+                <input type="text" className="full-width" value={this.state.value} onChange={this.handleChange} />
             </div>
         );
     }
