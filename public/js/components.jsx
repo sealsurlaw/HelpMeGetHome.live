@@ -32,7 +32,7 @@ class App extends React.Component {
                     backward: res.backward,
                     users: res.users,
                     messages: res.messages,
-                    ip: res.ip + ":8000"
+                    ip: "http://" + res.ip + ":8000"
                 });
                 console.log(this.state.ip);
             })
