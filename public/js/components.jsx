@@ -85,7 +85,7 @@ class Moves extends React.Component {
 class Stream extends React.Component {
     render() {
         return (
-            <iframe src="http://10.143.236.177:8000/index.html" height="280" width="320" className="center border-none stream">
+            <iframe src="http://sealsurlaw-54353.portmap.host:49979/index.html" height="280" width="320" className="center border-none stream">
             </iframe>
         );
     }
