@@ -74,7 +74,13 @@ class Controls extends React.Component {
     render() {
         return (
             <div id="controls">
-                These are the controls
+                {this.props.forward}<br />
+                ^<br />
+                |<br />
+                {this.props.left}<- ->{this.props.right}<br />
+                {this.props.backward}<br />
+                |<br />
+                V<br />
             </div>
         );
     }
