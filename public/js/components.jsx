@@ -11,6 +11,8 @@ class App extends React.Component {
             backward: null,
         }
 
+        this.tick = this.tick.bind(this);
+
         // this.timerHandle = this.timerHandle.bind(this);
     }
 
@@ -18,8 +20,6 @@ class App extends React.Component {
         this.tick();
 
         this.timer = setInterval(this.tick, 250);
-
-        this.tick = this.tick.bind(this);
     }
 
     tick = function () {
