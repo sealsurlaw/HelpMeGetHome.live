@@ -246,11 +246,16 @@ class Chat extends React.Component {
                 <input type="text" className="full-width" value={this.state.value} onChange={this.handleChange} />
                 <input type="submit" className="full-width" onClick={this.handleClick} />
                 <div className="full-width bg-white">
-                    {this.props.users[0]}: {this.props.messages[0]}<br />
-                    {this.props.users[1]}: {this.props.messages[1]}<br />
-                    {this.props.users[2]}: {this.props.messages[2]}<br />
-                    {this.props.users[3]}: {this.props.messages[3]}<br />
-                    {this.props.users[4]}: {this.props.messages[4]}
+                    <span className="username">{this.props.users[0]}</span>: {this.props.messages[0]}<br />
+                    <span className="username">{this.props.users[1]}</span>: {this.props.messages[1]}<br />
+                    <span className="username">{this.props.users[2]}</span>: {this.props.messages[2]}<br />
+                    <span className="username">{this.props.users[3]}</span>: {this.props.messages[3]}<br />
+                    <span className="username">{this.props.users[4]}</span>: {this.props.messages[4]}<br />
+                    <span className="username">{this.props.users[5]}</span>: {this.props.messages[5]}<br />
+                    <span className="username">{this.props.users[6]}</span>: {this.props.messages[6]}<br />
+                    <span className="username">{this.props.users[7]}</span>: {this.props.messages[7]}<br />
+                    <span className="username">{this.props.users[8]}</span>: {this.props.messages[8]}<br />
+                    <span className="username">{this.props.users[9]}</span>: {this.props.messages[9]}
                 </div>
             </div >
         );
