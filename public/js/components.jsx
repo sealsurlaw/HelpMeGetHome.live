@@ -85,9 +85,9 @@ class Controls extends React.Component {
                     <div className="col"></div>
                 </div>
                 <div className="row">
-                    <div className="col text-right">{this.props.left}<i className="fas fa-arrow-left"></i></div>
+                    <div className="col-5 text-right">{this.props.left}<i className="fas fa-arrow-left"></i></div>
                     <div className="col"></div>
-                    <div className="col text-left"><i className="fas fa-arrow-right">{this.props.right}</i></div>
+                    <div className="col-5 text-left"><i className="fas fa-arrow-right">{this.props.right}</i></div>
                 </div>
                 <div className="row">
                     <div className="col"></div>
