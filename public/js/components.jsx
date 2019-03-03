@@ -10,6 +10,8 @@ class App extends React.Component {
             right: null,
             forward: null,
             backward: null,
+            users: null,
+            messages: null,
         }
 
         this.tick = this.tick.bind(this);
@@ -27,6 +29,8 @@ class App extends React.Component {
                     right: res.right,
                     forward: res.forward,
                     backward: res.backward,
+                    users: res.users,
+                    messages: res.messages,
                 })
             })
             .catch(err => {
@@ -47,6 +51,8 @@ class App extends React.Component {
                     right: res.right,
                     forward: res.forward,
                     backward: res.backward,
+                    users: res.users,
+                    messages: res.messages,
                 })
             })
             .catch(err => {
@@ -60,7 +66,7 @@ class App extends React.Component {
                 <Moves moves={this.state.moves} />
                 <Stream />
                 <Controls left={this.state.left} right={this.state.right} forward={this.state.forward} backward={this.state.backward} />
-                <Chat name={this.state.name} />
+                <Chat name={this.state.name} users={this.state.users} messages={this.state.messages} />
             </div>
         );
     }
@@ -183,7 +189,7 @@ class Controls extends React.Component {
                         <tr className="">
                             <td></td>
                             <td></td>
-                            <td className="text-center "><a onClick={this.voteBackward}><i class="fas fa-ban"></i></a></td>
+                            <td className="text-center "><a onClick={this.voteBackward}><i className="fas fa-ban"></i></a></td>
                             <td></td>
                             <td></td>
                         </tr>
@@ -206,8 +212,7 @@ class Chat extends React.Component {
         super(props);
         this.state = {
             value: '',
-            message: null,
-            names: [null, null, null, null, null],
+            users: [null, null, null, null, null],
             messages: [null, null, null, null, null],
         }
 
@@ -225,7 +230,7 @@ class Chat extends React.Component {
         fetch('/message?value=' + this.state.value + '&name=' + this.props.name)
             .then(_ => {
                 this.setState({
-                    message: '',
+                    value: '',
                 })
             })
             .catch(err => {
@@ -239,8 +244,14 @@ class Chat extends React.Component {
                 <div className="full-width">{this.props.name}</div>
                 <input type="text" className="full-width" value={this.state.value} onChange={this.handleChange} />
                 <input type="submit" className="full-width" onClick={this.handleClick} />
-                <div className="full-width" style="background-color: white;"></div>
-            </div>
+                <div className="full-width bg-white">
+                    {this.state.users[0]}: {this.state.messages[0]}<br />
+                    {this.state.users[1]}: {this.state.messages[1]}<br />
+                    {this.state.users[2]}: {this.state.messages[2]}<br />
+                    {this.state.users[3]}: {this.state.messages[3]}<br />
+                    {this.state.users[4]}: {this.state.messages[4]}
+                </div>
+            </div >
         );
     }
 }

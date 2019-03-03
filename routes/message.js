@@ -6,7 +6,7 @@ router.get('/', function (req, res, next) {
     const messageQuery = req.query.value;
     const nameQuery = req.query.name;
 
-    if (direction.length == 0) {
+    if (messageQuery == null || nameQuery == null) {
         db.any(`SELECT * FROM controls;`)
             .then(data => {
                 res.send(data[0]);
@@ -14,7 +14,7 @@ router.get('/', function (req, res, next) {
             })
     }
 
-    db.any(`UPDATE controls SET "` + direction + `" = "` + direction + `" + 1; SELECT * FROM controls;`)
+    db.any(`UPDATE controls SET "users" = ` + nameQuery + ` || "users", "messages" = ` + messageQuery + ` || "messages"; SELECT * FROM controls;`)
         .then(data => {
             console.log(data[0]);
             res.send(data[0]);
