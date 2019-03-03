@@ -68,6 +68,23 @@ class Stream extends React.Component {
 }
 
 class Controls extends React.Component {
+    vote = (direction) => {
+        fetch('/vote?direction=' + direction)
+            .then(response => response.json())
+            .then(res => {
+                console.log(res);
+                this.setState({
+                    left: res.left,
+                    right: res.right,
+                    forward: res.forward,
+                    backward: res.backward,
+                })
+            })
+            .catch(err => {
+                console.log(err);
+            })
+    }
+
     render() {
         return (
             <div id="controls" className="center">
@@ -83,21 +100,21 @@ class Controls extends React.Component {
                         <tr>
                             <td></td>
                             <td></td>
-                            <td><a href="http://helpmegethome.herokuapp.com/vote?direction=forward"><i className="fas fa-arrow-up"></i></a></td>
+                            <td><a onClick={vote("forward")}><i className="fas fa-arrow-up"></i></a></td>
                             <td></td>
                             <td></td>
                         </tr>
                         <tr>
                             <td>{this.props.left}</td>
-                            <td><a href="http://helpmegethome.herokuapp.com/vote?direction=left"><i className="fas fa-arrow-left"></i></a></td>
+                            <td><a onClick={vote("left")}><i className="fas fa-arrow-left"></i></a></td>
                             <td></td>
-                            <td><a href="http://helpmegethome.herokuapp.com/vote?direction=right"><i className="fas fa-arrow-right"></i></a></td>
+                            <td><a onClick={vote("right")}><i className="fas fa-arrow-right"></i></a></td>
                             <td>{this.props.right}</td>
                         </tr>
                         <tr>
                             <td></td>
                             <td></td>
-                            <td><a href="http://helpmegethome.herokuapp.com/vote?direction=backward"><i className="fas fa-arrow-down"></i></a></td>
+                            <td><a onClick={vote("backward")}><i className="fas fa-arrow-down"></i></a></td>
                             <td></td>
                             <td></td>
                         </tr>
