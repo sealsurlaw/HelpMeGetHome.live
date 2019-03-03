@@ -3,9 +3,28 @@ var router = express.Router();
 var db = require('../db');
 
 router.get('/', function (req, res, next) {
-    const direction = req.query.direction;
+    const directionQuery = req.query.direction;
+    var direction;
 
-    db.any(`UPDATE controls SET ` + direction + ` = ` + direction + ` + 1;`)
+    switch (directionQuery) {
+        case 'left':
+            direction = 'numLefts';
+            break;
+        case 'right':
+            direction = 'numRights';
+            break;
+        case 'forward':
+            direction = 'numForwards';
+            break;
+        case 'left':
+            direction = 'numBacks';
+            break;
+        default:
+            direction = '';
+            break;
+    }
+
+    db.any(`UPDATE controls SET ` + direction + ` = ` + direction + ` + 1, numMoves = numMoves + 1;`)
         .then(data => {
             console.log(data[0]);
             res.send(data[0]);
