@@ -32,7 +32,7 @@ class App extends React.Component {
                     backward: res.backward,
                     users: res.users,
                     messages: res.messages,
-                    ip: res.ip + ":49979/index.html"
+                    ip: res.ip + ":8000"
                 })
             })
             .catch(err => {
@@ -55,7 +55,6 @@ class App extends React.Component {
                     backward: res.backward,
                     users: res.users,
                     messages: res.messages,
-                    ip: res.ip + ":49979/index.html"
                 })
             })
             .catch(err => {
