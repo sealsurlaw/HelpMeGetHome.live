@@ -15,6 +15,12 @@ class App extends React.Component {
     }
 
     componentDidMount() {
+        this.tick();
+
+        this.timer = setInterval(this.tick, 250);
+    }
+
+    tick = function () {
         fetch('/update')
             .then(response => response.json())
             .then(res => {
@@ -31,10 +37,6 @@ class App extends React.Component {
                 console.log(err);
             })
     }
-
-    // timerHandler() {
-    //     console.log("Time up");
-    // }
 
     render() {
         return (
