@@ -91,6 +91,10 @@ class Stream extends React.Component {
 
     }
 
+    componentDidUpdate() {
+        console.log(this.props.ip);
+    }
+
     render() {
         return (
             <iframe src={this.props.ip} height="280" width="320" className="center border-none stream" >
