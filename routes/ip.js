@@ -6,7 +6,9 @@ router.get('/', function (req, res, next) {
     const ip = req.query.ip;
 
     db.any(`UPDATE controls SET "ip" = "` + ip + `";`)
-        .then(_ => { })
+        .then(_ => {
+            res.send("Updated with IP Address: " + ip);
+        })
         .catch(err => {
             console.log(err);
         })
