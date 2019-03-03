@@ -223,6 +223,7 @@ class Chat extends React.Component {
             value: event.target.value,
         });
 
+        console.log(this.props.users);
         console.log(this.props.messages);
     }
 
@@ -245,11 +246,11 @@ class Chat extends React.Component {
                 <input type="text" className="full-width" value={this.state.value} onChange={this.handleChange} />
                 <input type="submit" className="full-width" onClick={this.handleClick} />
                 <div className="full-width bg-white">
-                    {/* {this.props.users[0]}: {this.props.messages[0]}<br />
+                    {this.props.users[0]}: {this.props.messages[0]}<br />
                     {this.props.users[1]}: {this.props.messages[1]}<br />
                     {this.props.users[2]}: {this.props.messages[2]}<br />
                     {this.props.users[3]}: {this.props.messages[3]}<br />
-                    {this.props.users[4]}: {this.props.messages[4]} */}
+                    {this.props.users[4]}: {this.props.messages[4]}
                 </div>
             </div >
         );
