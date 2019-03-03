@@ -10,6 +10,7 @@ var moveRouter = require('./routes/move');
 var nameRouter = require('./routes/name');
 var smsRouter = require('./routes/sms');
 var message = require('./routes/message');
+var ip = require('./routes/ip');
 
 var app = express();
 
@@ -26,5 +27,6 @@ app.use('/move', moveRouter);
 app.use('/name', nameRouter);
 app.use('/sms', smsRouter);
 app.use('/message', message);
+app.use('/ip', ip);
 
 module.exports = app;
