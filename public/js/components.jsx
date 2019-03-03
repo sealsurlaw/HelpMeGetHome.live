@@ -73,32 +73,46 @@ class Stream extends React.Component {
 class Controls extends React.Component {
     render() {
         return (
-            <div id="controls" className="container-flex center">
-                <div className="row">
-                    <div className="col"></div>
-                    <div className="col text-center">{this.props.forward}</div>
-                    <div className="col"></div>
-                </div>
-                <div className="row">
-                    <div className="col"></div>
-                    <div className="col text-center"><i className="fas fa-arrow-up"></i></div>
-                    <div className="col"></div>
-                </div>
-                <div className="row middle-row">
-                    <div className="col-5 text-right">{this.props.left}<i className="fas fa-arrow-left"></i></div>
-                    <div className="col"></div>
-                    <div className="col-5 text-left"><i className="fas fa-arrow-right">{this.props.right}</i></div>
-                </div>
-                <div className="row">
-                    <div className="col"></div>
-                    <div className="col text-center"><i className="fas fa-arrow-down"></i></div>
-                    <div className="col"></div>
-                </div>
-                <div className="row">
-                    <div className="col"></div>
-                    <div className="col text-center">{this.props.backward}</div>
-                    <div className="col"></div>
-                </div>
+            <div id="controls" className="center">
+                <table className="center">
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>{this.props.forward}</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td><a href="#"><i className="fas fa-arrow-up"></i></a></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>{this.props.left}</td>
+                            <td><a href="#"><i className="fas fa-arrow-left"></i></a></td>
+                            <td></td>
+                            <td><a href="#"><i className="fas fa-arrow-right"></i></a></td>
+                            <td>{this.props.right}</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td><a href="#"><i className="fas fa-arrow-down"></i></a></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>{this.props.backward}</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         );
     }

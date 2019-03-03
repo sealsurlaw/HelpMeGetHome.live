@@ -5,6 +5,7 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var updateRouter = require('./routes/update');
+var voteRouter = require('./routes/vote');
 
 var app = express();
 
@@ -16,5 +17,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/update', updateRouter);
+app.use('/vote', voteRouter);
 
 module.exports = app;
