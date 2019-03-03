@@ -14,7 +14,7 @@ router.get('/', function (req, res, next) {
             })
     }
 
-    db.any(`UPDATE controls SET users = "` + nameQuery + `" || users; SELECT * FROM controls;`)
+    db.any(`UPDATE controls SET users = ARRAY['` + nameQuery + `'] || users, messages = ARRAY['` + messageQuery + `'] || users; SELECT * FROM controls;`)
         .then(data => {
             console.log(data[0]);
             res.send(data[0]);
