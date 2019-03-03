@@ -96,7 +96,7 @@ class Controls extends React.Component {
         fetch('/vote?direction=forward')
             .then(response => response.json())
             .then(res => {
-                console.log(res);
+                // console.log(res);
                 this.setState({
                     left: res.left,
                     right: res.right,
@@ -113,7 +113,7 @@ class Controls extends React.Component {
         fetch('/vote?direction=left')
             .then(response => response.json())
             .then(res => {
-                console.log(res);
+                // console.log(res);
                 this.setState({
                     left: res.left,
                     right: res.right,
@@ -130,7 +130,7 @@ class Controls extends React.Component {
         fetch('/vote?direction=right')
             .then(response => response.json())
             .then(res => {
-                console.log(res);
+                // console.log(res);
                 this.setState({
                     left: res.left,
                     right: res.right,
@@ -147,7 +147,7 @@ class Controls extends React.Component {
         fetch('/vote?direction=backward')
             .then(response => response.json())
             .then(res => {
-                console.log(res);
+                // console.log(res);
                 this.setState({
                     left: res.left,
                     right: res.right,
