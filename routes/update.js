@@ -11,11 +11,11 @@ router.get('/', function (req, res, next) {
         .catch(err => {
             console.log(err);
             res.send({
+                backward: 0,
                 moves: 0,
                 left: 0,
                 right: 0,
                 forward: 0,
-                backward: 0,
             })
         })
 });
