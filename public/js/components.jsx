@@ -43,7 +43,7 @@ class App extends React.Component {
     render() {
         return (
             <div>
-                <Timer time={this.state.time} />
+                <Moves moves={this.state.moves} />
                 <Stream />
                 <Controls left={this.state.left} right={this.state.right} forward={this.state.forward} backward={this.state.backward} />
                 <Chat />
@@ -52,11 +52,11 @@ class App extends React.Component {
     }
 }
 
-class Timer extends React.Component {
+class Moves extends React.Component {
     render() {
         return (
-            <div id="timer" className="center">
-                {this.props.time}
+            <div id="moves" className="center">
+                I've made {this.props.moves} moves and counting!
             </div>
         );
     }
@@ -148,35 +148,35 @@ class Controls extends React.Component {
                         <tr>
                             <td></td>
                             <td></td>
-                            <td>{this.props.forward}</td>
+                            <td className="text-center">{this.props.forward}</td>
                             <td></td>
                             <td></td>
                         </tr>
                         <tr>
                             <td></td>
                             <td></td>
-                            <td><a onClick={this.voteForward}><i className="fas fa-arrow-up"></i></a></td>
+                            <td className="text-center"><a onClick={this.voteForward}><i className="fas fa-arrow-up"></i></a></td>
                             <td></td>
                             <td></td>
                         </tr>
                         <tr>
-                            <td>{this.props.left}</td>
+                            <td className="align-middle">{this.props.left}</td>
                             <td><a onClick={this.voteLeft}><i className="fas fa-arrow-left"></i></a></td>
                             <td></td>
                             <td><a onClick={this.voteRight}><i className="fas fa-arrow-right"></i></a></td>
-                            <td>{this.props.right}</td>
+                            <td className="align-middle">{this.props.right}</td>
                         </tr>
                         <tr>
                             <td></td>
                             <td></td>
-                            <td><a onClick={this.voteBackward}><i className="fas fa-arrow-down"></i></a></td>
+                            <td className="text-center"><a onClick={this.voteBackward}><i className="fas fa-arrow-down"></i></a></td>
                             <td></td>
                             <td></td>
                         </tr>
                         <tr>
                             <td></td>
                             <td></td>
-                            <td>{this.props.backward}</td>
+                            <td className="text-center">{this.props.backward}</td>
                             <td></td>
                             <td></td>
                         </tr>
