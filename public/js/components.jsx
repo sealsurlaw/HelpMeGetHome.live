@@ -41,7 +41,7 @@ class App extends React.Component {
             <div>
                 <Timer time={this.state.time} />
                 <Stream />
-                <Controls />
+                <Controls left={this.state.left} right={this.state.right} forward={this.state.forward} backward={this.state.backward} />
                 <Chat />
             </div>
         );
@@ -73,14 +73,32 @@ class Stream extends React.Component {
 class Controls extends React.Component {
     render() {
         return (
-            <div id="controls">
-                {this.props.forward}<br />
-                ^<br />
-                |<br />
-                {this.props.left}<- ->{this.props.right}<br />
-                {this.props.backward}<br />
-                |<br />
-                V<br />
+            <div id="controls" className="container-flex">
+                <div className="row">
+                    <div className="col"></div>
+                    <div className="col">{this.props.forward}</div>
+                    <div className="col"></div>
+                </div>
+                <div className="row">
+                    <div className="col"></div>
+                    <div className="col"><i class="fas fa-arrow-up"></i></div>
+                    <div className="col"></div>
+                </div>
+                <div className="row">
+                    <div className="col">{this.props.left}<i class="fas fa-arrow-left"></i></div>
+                    <div className="col"></div>
+                    <div className="col">{this.props.right}<i class="fas fa-arrow-right"></i></div>
+                </div>
+                <div className="row">
+                    <div className="col"></div>
+                    <div className="col"><i class="fas fa-arrow-down"></i></div>
+                    <div className="col"></div>
+                </div>
+                <div className="row">
+                    <div className="col"></div>
+                    <div className="col">{this.props.backward}</div>
+                    <div className="col"></div>
+                </div>
             </div>
         );
     }
