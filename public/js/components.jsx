@@ -10,8 +10,8 @@ class App extends React.Component {
             right: null,
             forward: null,
             backward: null,
-            users: null,
-            messages: null,
+            users: [null, null, null, null, null],
+            messages: [null, null, null, null, null],
         }
 
         this.tick = this.tick.bind(this);
