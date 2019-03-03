@@ -183,7 +183,7 @@ class Controls extends React.Component {
                         <tr className="border">
                             <td></td>
                             <td></td>
-                            <td className="text-center border"><a onClick={this.voteBackward}><i className="fas fa-arrow-down"></i></a></td>
+                            <td className="text-center border"><a onClick={this.voteBackward}><i class="fas fa-ban"></i></a></td>
                             <td></td>
                             <td></td>
                         </tr>
@@ -206,9 +206,12 @@ class Chat extends React.Component {
         super(props);
         this.state = {
             message: null,
+            names: [null, null, null, null, null],
+            messages: [null, null, null, null, null],
         }
 
         this.handleChange = this.handleChange.bind(this);
+        this.handleClick = this.handleClick.bind(this);
     }
 
     handleChange(event) {
@@ -217,11 +220,24 @@ class Chat extends React.Component {
         });
     }
 
+    handleClick(event) {
+        fetch('/message?value=' + this.state.value + '&name=' + this.props.name)
+            .then(_ => {
+                this.setState({
+                    message: '',
+                })
+            })
+            .catch(err => {
+                console.log(err);
+            })
+    }
+
     render() {
         return (
             <div id="chat" className="container-fluid">
                 <div className="full-width">{this.props.name}</div>
                 <input type="text" className="full-width" value={this.state.value} onChange={this.handleChange} />
+                <input type="submit" className="full-width" onClick={this.handleClick} />
             </div>
         );
     }
