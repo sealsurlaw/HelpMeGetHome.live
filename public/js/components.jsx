@@ -143,8 +143,8 @@ class Controls extends React.Component {
     render() {
         return (
             <div id="controls" className="border">
-                <table className="border center">
-                    <tbody className="border">
+                <table className="border">
+                    <tbody className="border center">
                         <tr className="border">
                             <td></td>
                             <td></td>
