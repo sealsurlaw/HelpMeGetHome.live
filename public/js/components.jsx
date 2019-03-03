@@ -33,7 +33,8 @@ class App extends React.Component {
                     users: res.users,
                     messages: res.messages,
                     ip: res.ip + ":8000"
-                })
+                });
+                console.log(this.state.ip);
             })
             .catch(err => {
                 console.log(err);
