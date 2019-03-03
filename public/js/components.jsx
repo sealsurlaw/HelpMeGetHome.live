@@ -78,6 +78,7 @@ class App extends React.Component {
                     backward: res.backward,
                     users: res.users,
                     messages: res.messages,
+                    ip: res.ip + ":8000"
                 })
             })
             .catch(err => {
@@ -120,7 +121,7 @@ class Stream extends React.Component {
 
     render() {
         return (
-            <iframe src={this.props.ip} height="280" width="320" className="center border-none stream" >
+            <iframe src={this.props.src} height="280" width="320" className="center border-none stream" >
             </iframe >
         );
     }
