@@ -21,7 +21,7 @@ class App extends React.Component {
         fetch('/name')
             .then(response => response.json())
             .then(res => {
-                console.log(res);
+                //console.log(res);
                 this.setState({
                     name: res.name,
                     moves: res.moves,
@@ -44,7 +44,7 @@ class App extends React.Component {
         fetch('/update')
             .then(response => response.json())
             .then(res => {
-                console.log(res);
+                //console.log(res);
                 this.setState({
                     moves: res.moves,
                     left: res.left,
@@ -212,8 +212,6 @@ class Chat extends React.Component {
         super(props);
         this.state = {
             value: '',
-            users: [null, null, null, null, null],
-            messages: [null, null, null, null, null],
         }
 
         this.handleChange = this.handleChange.bind(this);
@@ -224,6 +222,8 @@ class Chat extends React.Component {
         this.setState({
             value: event.target.value,
         });
+
+        console.log(this.props.messages);
     }
 
     handleClick(event) {
