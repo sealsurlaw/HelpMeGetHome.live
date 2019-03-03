@@ -4,7 +4,8 @@ class App extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            time: null,
+            name: null,
+            moves: null,
             left: null,
             right: null,
             forward: null,
@@ -12,8 +13,6 @@ class App extends React.Component {
         }
 
         this.tick = this.tick.bind(this);
-
-        // this.timerHandle = this.timerHandle.bind(this);
     }
 
     componentDidMount() {
@@ -23,11 +22,12 @@ class App extends React.Component {
     }
 
     tick = function () {
-        fetch('/update')
+        fetch('/name')
             .then(response => response.json())
             .then(res => {
                 console.log(res);
                 this.setState({
+                    name: res.name,
                     moves: res.moves,
                     left: res.left,
                     right: res.right,
@@ -46,7 +46,7 @@ class App extends React.Component {
                 <Moves moves={this.state.moves} />
                 <Stream />
                 <Controls left={this.state.left} right={this.state.right} forward={this.state.forward} backward={this.state.backward} />
-                <Chat />
+                <Chat name={this.state.name} />
             </div>
         );
     }
@@ -188,10 +188,26 @@ class Controls extends React.Component {
 }
 
 class Chat extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            message: null,
+        }
+
+        this.handleChange = this.handleChange.bind(this);
+    }
+
+    handleChange(event) {
+        this.setState({
+            value: event.target.value,
+        });
+    }
+
     render() {
         return (
-            <div id="chat" className="center">
-                This is the chat
+            <div id="chat" className="center full-width">
+                {this.props.name}
+                <input type="text" value={this.state.value} onChange={this.handleChange} />
             </div>
         );
     }
